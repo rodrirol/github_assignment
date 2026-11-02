@@ -1,6 +1,6 @@
 // ============================================================
 // STUDENT 1 — Greeting & Age
-// Name: [Put your full name here]
+// Name: Fabian Del Barrio
 // Concepts: string, number, boolean, operators, functions, events
 // ============================================================
 
@@ -13,14 +13,19 @@ const student1Output = document.getElementById("student1-output");
 
 function handleStudent1Click() {
   // 1. Read the values from the inputs (always strings).
-
+  let student1Name = student1NameInput.value;
+  let student1BirthYear = student1BirthYearInput.value;
   // 2. Convert the birth year to a number.
-
+  student1BirthYear = Number(student1BirthYear);
+  let student1Age = STUDENT1_CURRENT_YEAR - student1BirthYear;
+  let student1IsAdult = student1Age >= 18;
   // 3. Calculate the age and whether the person is an adult.
 
   // 4. Prepare the output message.
+  let student1Message = `Hello, ${student1Name}! You are ${student1Age} years old and ${student1IsAdult ? "an adult." : "a minor."}`;
 
   // 5. Display the message.
+  student1Output.textContent = student1Message;
 }
 
 // Run the function when the button is clicked.
